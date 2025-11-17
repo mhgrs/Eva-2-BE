@@ -14,6 +14,7 @@
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    //urls
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'listaClientes' %}">Clientes</a></li> 
                     <li class="nav-item"><a class="nav-link" href="{% url 'listaProductos' %}">Productos</a></li>
@@ -22,6 +23,8 @@
         </div>
     </nav>
     <main class="container my-4">
+
+        //aqui va el contenido
         {% block contenido %}{% endblock %}
     </main>
    

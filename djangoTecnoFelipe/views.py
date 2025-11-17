@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto, Cliente
 from .forms import ProductoForm, ClienteForm
 
+
+""" inicio """
 def index(request):
     return render(request, 'index.html')
 
@@ -11,6 +13,8 @@ def listaProductos(request):
     contexto = {'productos': productos}
     return render(request, 'djangoTecnoFelipe/listaProductos.html', contexto)
 
+
+""" crear producto """
 def crearProducto(request):
     if request.method == 'POST':
         form = ProductoForm(request.POST)
