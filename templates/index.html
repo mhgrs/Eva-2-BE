@@ -1,22 +1,26 @@
 
-//html base
+
 {% extends 'base.html' %} 
 {% block titulo %}Inicio - TecnoStore PB{% endblock %}
 
-//contenido
+
 {% block contenido %}
-<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+<div class="p-5 mb-4 bgcard rounded-3 shadow-sm">
     <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">Bienvenido a TecnoStore PB</h1>
         <p class="col-md-8 fs-4">Tu tienda de confianza para productos tecnológicos: computadores, celulares, accesorios y periféricos.</p>
         <hr class="my-4">
 
-        //urls
-        <a href="{% url 'listaProductos' %}" class="btn btn-primary btn-lg" role="button">
+    
+        <a href="{% url 'listaProductos' %}" class="btn  btn-lg" role="button">
             <i class="bi bi-box-seam"></i> Ver Productos
         </a>
-        <a href="{% url 'listaClientes' %}" class="btn btn-secondary btn-lg" role="button">
+        <a href="{% url 'listaClientes' %}" class="btn  btn-lg" role="button">
             <i class="bi bi-people"></i> Ver Clientes
+        </a>
+
+         <a href="{% url 'infoAlumno' %}" class="btn  btn-lg" role="button">
+            <i class="bi bi-people"></i> Informacion Alumno
         </a>
     </div>
 </div>

@@ -3,10 +3,10 @@
 {% block titulo %}Lista de Clientes{% endblock %}
 
 {% block contenido %}
-<div class="card shadow-sm">
+<div class="card shadow-sm bgcard" >
     <div class="card-header d-flex justify-content-between align-items-center">
         <h2 class="mb-0">Gestión de Clientes</h2>
-        <a href="{% url 'crearCliente' %}" class="btn btn-success">
+        <a href="{% url 'crearCliente' %}" class="btn ">
             <i class="bi bi-plus-circle"></i> Nuevo Cliente
         </a>
     </div>
@@ -30,10 +30,10 @@
                             <td>{{ cliente.telefono|default_if_none:"N/A" }}</td>
                             <td>{{ cliente.get_tipoCliente_display }}</td>
                             <td>
-                                <a href="{% url 'editarCliente' cliente.idCliente %}" class="btn btn-warning btn-sm" title="Editar">
+                                <a href="{% url 'editarCliente' cliente.idCliente %}" class="btn  btn-sm" title="Editar">
                                     <i class="bi bi-pencil"></i>
                                 </a>
-                                <a href="{% url 'eliminarCliente' cliente.idCliente %}" class="btn btn-danger btn-sm" title="Eliminar">
+                                <a href="{% url 'eliminarCliente' cliente.idCliente %}" class="btn btn-sm" title="Eliminar">
                                     <i class="bi bi-trash"></i>
                                 </a>
                             </td>
@@ -43,7 +43,7 @@
                 </table>
             </div>
         {% else %}
-            <div class="alert alert-info" role="alert">
+            <div class="alert bgenfa" role="alert">
                 <i class="bi bi-info-circle-fill"></i> No hay clientes registrados todavía.
                 <a href="{% url 'crearCliente' %}" class="alert-link">¡Crea el primero!</a>
             </div>

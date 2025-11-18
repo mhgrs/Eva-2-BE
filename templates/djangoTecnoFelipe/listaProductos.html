@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block titulo %}Lista de Productos{% endblock %}
 {% block contenido %}
-<div class="card shadow-sm">
+<div class="card shadow-sm bgcard">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h2 class="mb-0">Gestión de Productos</h2>
-        <a href="{% url 'crearProducto' %}" class="btn btn-success">
+        <a href="{% url 'crearProducto' %}" class="btn ">
             <i class="bi bi-plus-circle"></i> Nuevo Producto
         </a>
     </div>
     <div class="card-body">
-        {% if productos %} <div class="table-responsive">
-                <table class="table table-striped table-hover align-middle">
-                    <thead class="table-dark">
+        {% if productos %} <div class="table-responsive ">
+                <table class="table  table-hover align-middle bg-black">
+                    <thead class="table-dark ">
                         <tr>
                             <th>Nombre</th>
                             <th>Categoría</th>
@@ -28,8 +28,8 @@
                             <td>${{ producto.precio|floatformat:0 }}</td>
                             <td>{{ producto.stock }}</td>
                             <td>
-                                <a href="{% url 'editarProducto' producto.idProducto %}" class="btn btn-warning btn-sm" title="Editar"><i class="bi bi-pencil"></i></a>
-                                <a href="{% url 'eliminarProducto' producto.idProducto %}" class="btn btn-danger btn-sm" title="Eliminar"><i class="bi bi-trash"></i></a>
+                                <a href="{% url 'editarProducto' producto.idProducto %}" class="btn  btn-sm" title="Editar"><i class="bi bi-pencil"></i></a>
+                                <a href="{% url 'eliminarProducto' producto.idProducto %}" class="btn  btn-sm" title="Eliminar"><i class="bi bi-trash"></i></a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -37,7 +37,7 @@
                 </table>
             </div>
         {% else %}
-            <div class="alert alert-info" role="alert">
+            <div class="alert bgenfa" role="alert">
                 <i class="bi bi-info-circle-fill"></i> No hay productos registrados todavía.
                 <a href="{% url 'crearProducto' %}" class="alert-link">¡Crea el primero!</a>
             </div>

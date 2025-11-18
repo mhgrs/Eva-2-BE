@@ -78,20 +78,14 @@ def crearCliente(request):
 
 
 def editarCliente(request, id):
-    """ busca en la base de datos, si no existe muestra error """
     cliente = get_object_or_404(Cliente, idCliente=id) 
-    
     if request.method == 'POST':
-        """ crea la instancia, y le pasa request y los datos sin que cree uno nuevo """
         form = ClienteForm(request.POST, instance=cliente)
-        """ valida """
         if form.is_valid():
-            """ guarda en db """
             form.save()
             return redirect('listaClientes')
     else:
         form = ClienteForm(instance=cliente)
-        
     contexto = {
         'form': form,
         'tituloFormulario': f'Editar Cliente'
@@ -104,3 +98,6 @@ def eliminarCliente(request, id):
     cliente = get_object_or_404(Cliente, idCliente=id)
     cliente.delete()
     return redirect('listaClientes')
+
+def infoAlumno(request):
+    return render(request, 'djangoTecnoFelipe/infoAlumno.html')

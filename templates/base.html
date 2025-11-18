@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="es">
 <head>
     <meta charset="utf-8">
@@ -5,26 +6,28 @@
     <title>{% block titulo %}TecnoStore PB{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg  shadow-sm">
+<body class="">
+    <nav class="navbar bnav navbar-expand-lg  shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{% url 'index' %}">
                 <i class="bi bi-laptop"></i> <strong>TecnoStore PB</strong>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    //urls
+                    {% comment %} urls {% endcomment %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'listaClientes' %}">Clientes</a></li> 
                     <li class="nav-item"><a class="nav-link" href="{% url 'listaProductos' %}">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'infoAlumno' %}">Información</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <main class="container my-4">
 
-        //aqui va el contenido
+       {% comment %}  aqui va el contenido {% endcomment %}
         {% block contenido %}{% endblock %}
         
     </main>

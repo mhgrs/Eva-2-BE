@@ -11,6 +11,10 @@ class Producto(models.Model):
     estado = models.CharField(max_length=20, default='Activo', verbose_name="Estado")
     observaciones = models.TextField(null=True, blank=True, verbose_name="Observaciones")
     proveedor = models.CharField(max_length=100, null=True, blank=True, verbose_name="Proveedor")
+    sku = models.CharField(max_length=50,unique=True, null=True, blank=True, verbose_name="SKU")
+    urlImagen = models.URLField(max_length=255, null=True, blank=True, verbose_name="URL Imagen" ) 
+    marca = models.CharField(max_length=50, null=True, blank= True, verbose_name="Marca")
+    destacado = models.BooleanField(default=False, verbose_name="Es destacado?")
 
     def __str__(self):
         return self.nombre
@@ -44,6 +48,10 @@ class Cliente(models.Model):
     preferencias = models.TextField(null=True, blank=True, verbose_name="Preferencias")
     fechaNacimiento = models.DateField(null=True, blank=True, verbose_name="Fecha de Nacimiento")
     genero = models.CharField(max_length=1, choices=GENERO_CHOICES, null=True, blank=True, verbose_name="Género")
+    rut =  models.CharField(max_length=20, unique=True, blank= True, null=True, verbose_name= "RUT")
+    activo = models.BooleanField(default=False, verbose_name="Esta activo?")
+    razonSocial = models.CharField(max_length=50, null=True, blank=True, verbose_name="Razon social")
+    ultimaCompra = models.DateField(null=True, blank=True, verbose_name="Fecha Última Compra")
 
     def __str__(self):
         return f"{self.nombre} ({self.correo})"
